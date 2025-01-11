@@ -1,0 +1,20 @@
+<div class="fibonacci-container">  
+    <h1>Verificador de Fibonacci</h1>  
+  
+    <label for="numero">Digite um número:</label>  
+    <input type="number" id="numero" [(ngModel)]="numeroInput" />  
+  
+    <button (click)="calcularFibonacci()" class="calculate-button">Calcular</button>  
+  
+    <div *ngIf="pertence !== null">  
+      <p *ngIf="pertence; else naoPertence">  
+        O número {{ numeroInput }} pertence à sequência de Fibonacci.  
+      </p>  
+      <ng-template #naoPertence>  
+        <p>O número {{ numeroInput }} não pertence à sequência de Fibonacci.</p>  
+      </ng-template>  
+    </div>  
+  
+    <h2>Sequência de Fibonacci até {{ numeroInput }}:</h2>  
+    <p>{{ fibonacciSequence.join(', ') }}</p>  
+  </div>
