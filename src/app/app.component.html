@@ -1,3 +1,9 @@
-<h1>{{ title }}</h1>  
-<app-soma></app-soma>          <!-- Chame o componente de soma -->  
-<app-fibonacci></app-fibonacci>  <!-- Chame o componente de Fibonacci -->
+<h1>{{ title }}</h1>
+<nav>
+  <a routerLink="/soma">Soma</a> |
+  <a routerLink="/fibonacci">Fibonacci</a> |
+  <a routerLink="/faturamento">Faturamento</a> |
+  <a routerLink="/faturamento-estado">Faturamento Estado</a> |
+  <a routerLink="/inverter-string">Inverter String</a>
+</nav>
+<router-outlet></router-outlet>

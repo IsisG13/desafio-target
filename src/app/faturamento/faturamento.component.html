@@ -1,0 +1,33 @@
+<!-- faturamento.component.html -->
+<div class="container">
+    <h2>Estatísticas de Faturamento</h2>
+  
+    <div *ngIf="carregando" class="loading">
+      <p>Carregando dados...</p>
+    </div>
+  
+    <div *ngIf="erro" class="error">
+      <p>Ocorreu um erro ao carregar os dados. Por favor, verifique se o arquivo dados.json está na pasta assets.</p>
+    </div>
+  
+    <div *ngIf="!carregando && !erro && estatisticas" class="card">
+      <table>
+        <tr>
+          <th>Descrição</th>
+          <th>Valor</th>
+        </tr>
+        <tr>
+          <td>Menor Faturamento</td>
+          <td>{{ estatisticas.menor | currency:'BRL' }}</td>
+        </tr>
+        <tr>
+          <td>Maior Faturamento</td>
+          <td>{{ estatisticas.maior | currency:'BRL' }}</td>
+        </tr>
+        <tr>
+          <td>Dias Acima da Média</td>
+          <td>{{ estatisticas.diasAcimaDaMedia }}</td>
+        </tr>
+      </table>
+    </div>
+</div>
